@@ -15,6 +15,15 @@ namespace Museion.Vue.Controllers
             return View();
         }
 
+        public IActionResult SubmitedForm([FromBody] FormViewModel form)
+        {
+            string message = "";
+
+            // Insert to database, send email, etc
+
+            return Json(new { message });
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
