@@ -1,0 +1,35 @@
+﻿@import "colors.scss";
+
+.login-background {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    background-color: $darkturquoise;
+    text-align: center;
+    z-index: 0;
+}
+
+.login-container {
+    position: absolute;
+    top: 16%;
+    left: 30%;
+    width: 40%;
+    height: 300px;
+    background-color: $paper;
+    text-align: center;
+    z-index: 1;
+}
+
+@media (max-width: 800px) {
+    .login-container {
+        position: relative;
+        width: 80%;
+        height: 300px;
+        margin: 0 auto;
+        background-color: $paper;
+        text-align: center;
+        z-index: 1;
+    }
+}
