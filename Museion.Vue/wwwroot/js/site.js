@@ -86,6 +86,17 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./Scripts/login.js":
+/*!**************************!*\
+  !*** ./Scripts/login.js ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("﻿new Vue({\r\n    el: '#form',\r\n    data: {\r\n        UserName: '',\r\n        Password: '',\r\n        Institut: ''\r\n    },\r\n    computed: {\r\n        isSubmitDisabled() {\r\n            let isDisabled = true;\r\n\r\n            if (\r\n                this.UserName !== '' &&\r\n                this.Password !== '' &&\r\n                this.Institut !== ''\r\n            ) {\r\n                isDisabled = false;\r\n            }\r\n\r\n            return isDisabled;\r\n        }\r\n    },\r\n    methods: {\r\n        SubmitForm() {\r\n            let submit = true;\r\n\r\n            if (submit) {\r\n                axios({\r\n                    method: 'post',\r\n                    url: '/Login/LoggingIn',\r\n                    data: { \"Fields\": this.$data }\r\n                }).then(res => {\r\n                    this.$refs.SubmitButton.setAttribute(\"disabled\", \"disabled\");\r\n                }).catch(err => {\r\n                });\r\n            }\r\n        }\r\n    }\r\n});\n\n//# sourceURL=webpack:///./Scripts/login.js?");
+
+/***/ }),
+
 /***/ "./Scripts/site.js":
 /*!*************************!*\
   !*** ./Scripts/site.js ***!
@@ -93,7 +104,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("﻿Vue.component('vuetest', __webpack_require__(/*! ./vuetest.js */ \"./Scripts/vuetest.js\"));\n\n//# sourceURL=webpack:///./Scripts/site.js?");
+eval("﻿Vue.component('vuetest', __webpack_require__(/*! ./vuetest.js */ \"./Scripts/vuetest.js\"));\r\nVue.component('login', __webpack_require__(/*! ./login.js */ \"./Scripts/login.js\"));\r\n\n\n//# sourceURL=webpack:///./Scripts/site.js?");
 
 /***/ }),
 
@@ -117,18 +128,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils */ \"./Scripts/utils.js\");\n﻿\r\n\r\nnew Vue({\r\n    el: '#form',\r\n    data: {\r\n        FullName: '',\r\n        Email: '',\r\n        Comments: '',\r\n        InvalidEmail: false\r\n    },\r\n    computed: {\r\n        isSubmitDisabled() {\r\n            let isDisabled = true;\r\n\r\n            if (\r\n                this.FullName !== '' &&\r\n                this.Email !== '' &&\r\n                this.Comments !== ''\r\n            ) {\r\n                isDisabled = false;\r\n            }\r\n\r\n            return isDisabled;\r\n        }\r\n    },\r\n    methods: {\r\n        ResetForm() {\r\n            this.FullName = '';\r\n            this.Email = '';\r\n            this.Comments = '';\r\n        },\r\n        SubmitForm() {\r\n            let submit = true;\r\n\r\n            if (!Object(_utils__WEBPACK_IMPORTED_MODULE_0__[\"validateEmail\"])(this.Email)) {\r\n                this.InvalidEmail = true;\r\n                submit = false;\r\n            } else {\r\n                this.InvalidEmail = false;\r\n            }\r\n\r\n            if (submit) {\r\n                axios({\r\n                    method: 'post',\r\n                    url: '/Home/SubmitedForm',\r\n                    data: { \"Fields\": this.$data }\r\n                }).then(res => {\r\n                    alert('Successfully submitted feedback form ');\r\n                    this.$refs.SubmitButton.setAttribute(\"disabled\", \"disabled\");\r\n                }).catch(err => {\r\n                    alert(`There was an error submitting your form. See details: ${err}`);\r\n                });\r\n            }\r\n        },\r\n        CheckEmail() {\r\n            if(!Object(_utils__WEBPACK_IMPORTED_MODULE_0__[\"validateEmail\"])(this.Email)) {\r\n                this.InvalidEmail = true;\r\n                submit = false;\r\n            } else {\r\n                this.InvalidEmail = false;\r\n            }\r\n        }\r\n    }\r\n});\n\n//# sourceURL=webpack:///./Scripts/vuetest.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils */ \"./Scripts/utils.js\");\n﻿\r\n\r\nnew Vue({\r\n    el: '#form',\r\n    data: {\r\n        FullName: '',\r\n        Email: '',\r\n        Comments: '',\r\n        InvalidEmail: false\r\n    },\r\n    computed: {\r\n        isSubmitDisabled() {\r\n            let isDisabled = true;\r\n\r\n            if (\r\n                this.FullName !== '' &&\r\n                this.Email !== '' &&\r\n                this.Comments !== ''\r\n            ) {\r\n                isDisabled = false;\r\n            }\r\n\r\n            return isDisabled;\r\n        }\r\n    },\r\n    methods: {\r\n        ResetForm() {\r\n            this.FullName = '';\r\n            this.Email = '';\r\n            this.Comments = '';\r\n        },\r\n        SubmitForm() {\r\n            let submit = true;\r\n\r\n            if (!Object(_utils__WEBPACK_IMPORTED_MODULE_0__[\"validateEmail\"])(this.Email)) {\r\n                this.InvalidEmail = true;\r\n                submit = false;\r\n            } else {\r\n                this.InvalidEmail = false;\r\n            }\r\n\r\n            if (submit) {\r\n                axios({\r\n                    method: 'post',\r\n                    url: '/Home/SubmitedForm',\r\n                    data: { \"Fields\": this.$data }\r\n                }).then(res => {\r\n                    alert('Successfully submitted feedback form ');\r\n                    this.$refs.SubmitButton.setAttribute(\"disabled\", \"disabled\");\r\n                }).catch(err => {\r\n                    alert(`There was an error submitting your form. See details: ${err}`);\r\n                });\r\n            }\r\n        },\r\n        CheckEmail() {\r\n            if(!Object(_utils__WEBPACK_IMPORTED_MODULE_0__[\"validateEmail\"])(this.Email)) {\r\n                this.InvalidEmail = true;\r\n            } else {\r\n                this.InvalidEmail = false;\r\n            }\r\n        }\r\n    }\r\n});\n\n//# sourceURL=webpack:///./Scripts/vuetest.js?");
 
 /***/ }),
 
 /***/ 0:
-/*!***********************************************************************!*\
-  !*** multi ./Scripts/site.js ./Scripts/utils.js ./Scripts/vuetest.js ***!
-  \***********************************************************************/
+/*!******************************************************************************************!*\
+  !*** multi ./Scripts/login.js ./Scripts/site.js ./Scripts/utils.js ./Scripts/vuetest.js ***!
+  \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! D:\\Museion\\Museion\\Museion.Vue\\Scripts\\site.js */\"./Scripts/site.js\");\n__webpack_require__(/*! D:\\Museion\\Museion\\Museion.Vue\\Scripts\\utils.js */\"./Scripts/utils.js\");\nmodule.exports = __webpack_require__(/*! D:\\Museion\\Museion\\Museion.Vue\\Scripts\\vuetest.js */\"./Scripts/vuetest.js\");\n\n\n//# sourceURL=webpack:///multi_./Scripts/site.js_./Scripts/utils.js_./Scripts/vuetest.js?");
+eval("__webpack_require__(/*! D:\\Museion\\Museion\\Museion.Vue\\Scripts\\login.js */\"./Scripts/login.js\");\n__webpack_require__(/*! D:\\Museion\\Museion\\Museion.Vue\\Scripts\\site.js */\"./Scripts/site.js\");\n__webpack_require__(/*! D:\\Museion\\Museion\\Museion.Vue\\Scripts\\utils.js */\"./Scripts/utils.js\");\nmodule.exports = __webpack_require__(/*! D:\\Museion\\Museion\\Museion.Vue\\Scripts\\vuetest.js */\"./Scripts/vuetest.js\");\n\n\n//# sourceURL=webpack:///multi_./Scripts/login.js_./Scripts/site.js_./Scripts/utils.js_./Scripts/vuetest.js?");
 
 /***/ })
 

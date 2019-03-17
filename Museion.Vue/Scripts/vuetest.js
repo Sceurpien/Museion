@@ -55,7 +55,6 @@ new Vue({
         CheckEmail() {
             if(!validateEmail(this.Email)) {
                 this.InvalidEmail = true;
-                submit = false;
             } else {
                 this.InvalidEmail = false;
             }

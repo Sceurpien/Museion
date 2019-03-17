@@ -11,24 +11,40 @@
     z-index: 0;
 }
 
+.login-container-top {
+    position: relative;
+    width: 10%;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 2;
+    content: url("../img/base_logo_png.png");
+}
+
 .login-container {
     position: absolute;
-    top: 16%;
+    top: 18%;
     left: 30%;
     width: 40%;
     height: 300px;
-    background-color: $paper;
+    background-color: $white;
     text-align: center;
-    z-index: 1;
+    z-index: 3;
+    border-radius: 3px;
+    padding: 0.5%;
 }
 
 @media (max-width: 800px) {
+    .login-container-top {
+        display: none;
+    }
     .login-container {
         position: relative;
+        left: 0%;
+        top: 10%;
         width: 80%;
         height: 300px;
         margin: 0 auto;
-        background-color: $paper;
+        background-color: $white;
         text-align: center;
         z-index: 1;
     }

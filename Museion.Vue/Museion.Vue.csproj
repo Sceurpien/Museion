@@ -6,6 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Scripts\login.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Scripts\login.js" />
     <Content Include="Scripts\vuetest.js" />
   </ItemGroup>
 
