@@ -3,16 +3,31 @@
 <head>
     <meta charset="utf-8" />
     <title>Museion - Home Page</title>
-    <link rel="stylesheet" href="~/css/site.css">
+    <link rel="stylesheet" href="../css/site.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet">
 </head>
 <body>
 
+
     <div class="login-background"></div>
-
     <div class="login-container">
-        <img class="login-container-top" /><br />
-        Belépés
-    </div>
+        <img class="login-headline" />
+        <div class="login-form">
 
+            <select>
+                <option value="" disabled selected>Intézmény</option>
+                <option value="1">Egyik könyvtár</option>
+                <option value="2">Másik könyvtár</option>
+                <option value="3">Harmadik könyvtár</option>
+            </select>
+
+            <input type="text" placeholder="Felhasználónév" />
+
+            <input type="password" placeholder="Jelszó" />
+
+            <input type="submit" class="login-form-submit" value="Belépés" />
+
+        </div>
+    </div>
 </body>
 </html>

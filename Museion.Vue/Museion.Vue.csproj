@@ -6,12 +6,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\img\headline_2.pdn" />
+    <Content Remove="wwwroot\img\headline_3.pdn" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Scripts\login.js" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Scripts\login.js" />
     <Content Include="Scripts\vuetest.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\_DesignSamples\login.html" />
   </ItemGroup>
 
 

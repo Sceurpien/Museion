@@ -8,15 +8,18 @@ body {
     background-color: $white;
     text-align: left;
     color: $darkturquoise;
+    font-family: 'Merriweather', serif;
 }
 
 input,
+select,
 textarea {
     width: 100%;
     border: 1px solid #818181;
     border-radius: 2px;
     padding: 5px;
     font-size: .8em;
+    font-family: 'Merriweather', serif;
 
     &:focus {
         border-color: #58bee5;
@@ -30,6 +33,7 @@ button {
     padding: 8px;
     color: #fff;
     font-weight: 700;
+    font-family: 'Merriweather', serif;
 
     &:disabled {
         border-color: #999999;
